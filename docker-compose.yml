@@ -1,4 +1,4 @@
-cubaidp:
-  image: cubaidp
+cuba:
+  image: gmlion/cuba
   ports:
    - "80:8080"

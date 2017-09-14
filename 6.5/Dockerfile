@@ -24,8 +24,8 @@ ENV TOMCAT_HTTP_PORT_NUMBER=8080
 ENV TOMCAT_AJP_PORT_NUMBER=8009
 
 # Wars
-COPY wars/app.war /opt/bitnami/tomcat/webapps/
-COPY wars/app-core.war /opt/bitnami/tomcat/webapps/
+# COPY wars/app.war /opt/bitnami/tomcat/webapps/
+# COPY wars/app-core.war /opt/bitnami/tomcat/webapps/
 
 # Postgres driver
 ADD lib/postgresql-9.4.1212.jar /opt/bitnami/tomcat/lib/
