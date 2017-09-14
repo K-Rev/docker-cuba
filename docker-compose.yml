@@ -1,0 +1,4 @@
+cubaidp:
+  image: cubaidp
+  ports:
+   - "80:8080"
