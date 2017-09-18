@@ -21,7 +21,10 @@ ENV JPDA_OPTS="-Xrunjdwp:transport=dt_socket,address=8787,server=y,suspend=n"
 ENV JAVA_OPTS="$JAVA_OPTS -Djava.net.preferIPv4Stack=true -Djava.net.preferIPv4Addresses=true"
 ENV TOMCAT_SHUTDOWN_PORT_NUMBER=8005
 ENV TOMCAT_HTTP_PORT_NUMBER=8080
-ENV TOMCAT_AJP_PORT_NUMBER=8009
+ENV TOMCAT_AJP_PORT_NUMBER=8009 
+
+# Azure specific: Azure Web App doesn't support Cuba Push
+ENV JAVA_OPTS="$JAVA_OPTS -Dcuba.web.pushLongPolling=true -Dcuba.web.pushEnabled=false" 
 
 # Wars
 # COPY wars/app.war /opt/bitnami/tomcat/webapps/
@@ -30,7 +33,7 @@ ENV TOMCAT_AJP_PORT_NUMBER=8009
 # Postgres driver
 ADD lib/postgresql-9.4.1212.jar /opt/bitnami/tomcat/lib/
 
-# Set up cuba_home share to get logs
+# Azure specific: set up cuba_home share to get logs
 RUN ln -s /opt/cuba_home /home/cuba_home
 
 # Expose port 8080 (specify the same port with WEBSITES_PORT app setting)
