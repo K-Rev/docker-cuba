@@ -10,4 +10,6 @@ Use as a base and copy your WAR(s) to /opt/bitnami/tomcat/webapps/ (in the Docke
 It is configured to use postgresql-9.4.1212.jar: put the corresponding file from your Tomcat local deploy to the lib directory before building the image. If needed, copy other jdbc drivers to /opt/bitnami/tomcat/lib/ (in the Dockerfile).
 
 ## To run the container
-docker run -p 80:8080 gmlion/cuba
+cd <cuba-version>
+docker build -t cuba .
+docker run -d -p 80:8080 cuba
