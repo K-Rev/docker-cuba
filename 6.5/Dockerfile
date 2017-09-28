@@ -36,6 +36,11 @@ ADD lib/postgresql-9.4.1212.jar /opt/bitnami/tomcat/lib/
 # Azure specific: set up cuba_home share to get logs
 RUN ln -s /opt/cuba_home /home/cuba_home
 
+# Set up cuba_home
+RUN mkdir /opt/cuba_home/work
+RUN mkdir /opt/cuba_home/temp
+RUN mkdir /opt/cuba_home/logs
+
 # Expose port 8080 (specify the same port with WEBSITES_PORT app setting)
 EXPOSE 8080
 
