@@ -40,6 +40,9 @@ RUN ln -s /opt/cuba_home /home/cuba_home
 RUN mkdir /opt/cuba_home/work
 RUN mkdir /opt/cuba_home/temp
 RUN mkdir /opt/cuba_home/logs
+RUN mkdir /home/LogFiles
+RUN chmod -R 777 /home
+RUN chmod -R 777 /opt/cuba_home
 
 # Expose port 8080 (specify the same port with WEBSITES_PORT app setting)
 EXPOSE 8080
